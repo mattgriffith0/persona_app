@@ -12,8 +12,16 @@
   </head>
 
   <body>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
+    <% if devise_controller? %>
+      <%= render "shared/navbardevise" %>
+    <% else %>
+      <%= render "shared/navbar" %>
+    <% end %>
+    <% flash.each do |type, msg| %>
+      <div class= "<%= type %>">
+        <%= msg %>
+      </div>
+    <% end %>
     <main class="container mx-auto mt-28 px-5 flex">
       <%= yield %>
     </main>

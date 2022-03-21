@@ -1,0 +1,24 @@
+<div class="bg-blue-500 text-white antialiased p-6">
+  <nav class="flex justify-around">
+    <div class="flex flex-row items-center">
+      <div>
+        <%= link_to "Yellow Labs Inc.", root_path, class: 'text-3xl text-white font-bold' %>
+      </div>
+    </div>
+    <div class="ml-auto flex justify-around">
+      <ul class="flex flex-row items-center">
+        <% if user_signed_in? %>
+          <%= link_to user_path(current_user) do %>
+          <div class="flex flex-row items-center hover:text-gray-400">
+            <li class="pr-5 inline"><%= current_user.email %></li>
+          </div>
+          <% end %>
+          <li class="pr-5" data-turbo="false"><%= button_to "Sign out", destroy_user_session_path, method: :delete, class: 'btn btn-black' %></li>
+        <% else %>  
+          <li class="pr-5"><%= link_to "Sign in", new_user_session_path, class: 'text-md hover:text-white' %></li>
+          <li class="pr-5"><%= link_to "Register", new_user_registration_path, class: 'btn btn-primary' %></li>
+        <% end %>
+      </ul>
+    </div>
+  </nav>
+</div>
