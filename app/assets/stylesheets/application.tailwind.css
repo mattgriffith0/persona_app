@@ -3,6 +3,12 @@
 @tailwind utilities;
 
 @layer components {
+  .notice {
+    @apply bg-green-300 text-green-800 py-2 text-center text-xl font-bold;
+  }
+  .alert {
+    @apply bg-red-300 text-red-800 py-2 text-center text-xl font-bold;
+  }
   .btn {
     @apply font-bold py-2 px-4 border rounded-md;
   }
@@ -35,11 +41,5 @@
   }
   .form-div {
     @apply flex flex-col mb-4;
-  }
-  .notice {
-    @apply bg-green-300 text-green-800 py-2 text-center text-xl font-bold;
-  }
-  .alert {
-    @apply bg-red-300 text-red-800 py-2 text-center text-xl font-bold;
   }
 }

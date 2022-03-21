@@ -6,7 +6,6 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <%= stylesheet_link_tag "tailwind", "inter-font", "data-turbo-track": "reload" %>
-
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
   </head>
@@ -17,11 +16,7 @@
     <% else %>
       <%= render "shared/navbar" %>
     <% end %>
-    <% flash.each do |type, msg| %>
-      <div class= "<%= type %>">
-        <%= msg %>
-      </div>
-    <% end %>
+    <%= render "shared/flash" %>
     <main class="container mx-auto mt-28 px-5 flex">
       <%= yield %>
     </main>
