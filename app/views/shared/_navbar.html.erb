@@ -10,7 +10,7 @@
         <% if user_signed_in? %>
           <%= link_to user_path(current_user) do %>
           <div class="flex flex-row items-center hover:text-gray-400">
-            <li class="pr-5 inline"><%= current_user.email %></li>
+            <li class="pr-5 inline">My Account</li>
           </div>
           <% end %>
           <li class="pr-5" data-turbo="false"><%= button_to "Sign out", destroy_user_session_path, method: :delete, class: 'btn btn-black' %></li>

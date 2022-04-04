@@ -4,7 +4,7 @@
 
 @layer components {
   .notice {
-    @apply bg-green-300 text-green-800 py-2 text-center text-xl font-bold;
+    @apply bg-blue-300 text-blue-800 py-2 text-center text-xl font-bold;
   }
   .alert {
     @apply bg-red-300 text-red-800 py-2 text-center text-xl font-bold;

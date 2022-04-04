@@ -1,1 +1,25 @@
-<h2 class="text-2xl"><%= @user.email %></h2>
+<script>
+  const client = new Persona.Client({
+    templateId: 'itmpl_hKf7d1GVRMoJbUnmaz2eSQN2',
+    referenceId: '<%= @user.id %>',
+    fields: {
+      emailAddress: '<%= @user.email %>'
+    },
+    environment: 'sandbox',
+    onComplete: ({ inquiryId, status, fields }) => {
+      console.log(`Completed inquiry ${inquiryId} with status ${status}`);
+    }
+  });
+
+  function openClient() { client.open(); }
+  function cancelClient() { client.cancel(true); }
+  function logMessage() {
+    console.log("Hello Verify!")
+  }
+</script>
+
+<div class="flex flex-col">
+  <h2 class="text-2xl mb-3"><%= @user.email %></h2>
+
+  <%= button_to "Verify Account", "#" , class: 'btn btn-primary justify-start w-48 text-center', onclick: 'openClient();return false', remote: true %>
+</div>
